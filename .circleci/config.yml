@@ -58,7 +58,7 @@ jobs:
     docker:
       - image: circleci/ruby:latest
     environment:
-      ROlLBAR_ACCESS_TOKEN: cfbd66fad45a42e1b6aec0e587719cb9
+      ROLLBAR_ACCESS_TOKEN: cfbd66fad45a42e1b6aec0e587719cb9
     steps:
       - checkout
       - run:
