@@ -21,13 +21,13 @@ orbs:
               default: production
               description: The Rollbar environment. Defaults to production.
           steps:
-            - run:
-                name: Check for CURL
-                command: |
-                  if [[ $(command -v curl) == "" ]]; then
-                    echo "curl is required to nofify Rollbar and is not available."
-                    exit 1
-                  fi
+#            - run:
+#                name: Check for CURL
+#                command: |
+#                  if [[ $(command -v curl) == "" ]]; then
+#                    echo "curl is required to nofify Rollbar and is not available."
+#                    exit 1
+#                  fi
             - run:
                 name: Notify Rollbar
                 command: |
@@ -56,7 +56,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/mysql:latest
+      - image: circleci/ruby:latest
     environment:
       ROlLBAR_ACCESS_TOKEN: cfbd66fad45a42e1b6aec0e587719cb9
     steps:
