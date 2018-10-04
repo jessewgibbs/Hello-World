@@ -5,6 +5,8 @@ jobs:
   build:
     docker:
       - image: debian:stretch
+    environment:
+      ROlLBAR_ACCESS_TOKEN: cfbd66fad45a42e1b6aec0e587719cb9
     steps:
       - checkout
       - run:
@@ -13,3 +15,4 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
+      - rollbar.notify_deploy production
