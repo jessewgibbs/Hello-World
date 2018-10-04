@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-    rollbar: circleci/rollbar@volatile
+    rollbar: rollbar/deploy@dev:0.0.1
 jobs:
   build:
     docker:
@@ -15,4 +15,6 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
-      - rollbar.notify_deploy production
+      - run:
+          name: Report to ROlLBAR
+          command: notify_deploy production
